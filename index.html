@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0F0F0F">
+<title>BOTAX — Music</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0F0F0F;--card:#1C1C1C;--border:#222;--muted:#888;--white:#fff;--soft:#2A2A2A}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--white);font-family:Inter,system-ui,sans-serif}body{padding-bottom:156px}button,input{font:inherit}button{border:0;color:inherit;cursor:pointer}button:focus-visible,input:focus-visible{outline:2px solid #aaa;outline-offset:2px}.app{width:min(100%,600px);margin:auto;padding:20px 16px 30px}.top{display:flex;align-items:center;justify-content:space-between;margin:2px 0 24px}.top h1{font-size:22px;margin:0;font-weight:800}.icon-btn{background:transparent;font-size:22px;padding:8px;color:#ddd}.greeting{font-size:29px;font-weight:800;margin:0 0 20px;letter-spacing:-1px}.section{margin:25px 0}.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}.section h2{font-size:18px;margin:0;font-weight:750}.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.quick{display:flex;align-items:center;gap:10px;min-width:0;background:var(--card);border-radius:12px;overflow:hidden;text-align:left;padding:0 10px 0 0;height:68px}.quick img{width:60px;height:68px;object-fit:cover}.quick span{font-size:12px;line-height:1.35;font-weight:700;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.streak{display:flex;align-items:center;gap:15px;background:var(--card);border-radius:16px;padding:16px}.flame{font-size:35px}.streak b{display:block;font-size:15px}.muted{color:var(--muted);font-size:12px;margin-top:4px}.chips{display:flex;gap:8px;overflow:auto;scrollbar-width:none;padding-bottom:4px}.chips::-webkit-scrollbar{display:none}.chip{white-space:nowrap;border-radius:99px;background:var(--card);padding:10px 15px;font-size:12px;color:#ddd}.chip.active{background:#fff;color:#111;font-weight:700}.three-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.tile{background:transparent;text-align:left;min-width:0;padding:0}.tile img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;background:#292929}.tile b{display:block;font-size:12px;line-height:1.35;margin-top:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tile small{display:block;color:var(--muted);font-size:10px;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.searchbar{display:flex;align-items:center;gap:8px;background:var(--card);border-radius:99px;padding:0 16px;height:48px}.searchbar input{background:transparent;border:0;outline:0;color:white;width:100%;font-size:14px}.pill-tabs{display:flex;gap:8px;margin:17px 0}.pill-tabs button{background:var(--card);padding:10px 17px;border-radius:99px;font-size:12px}.pill-tabs button.active{background:#fff;color:#111;font-weight:700}.track-list{display:flex;flex-direction:column;gap:9px}.track{display:flex;align-items:center;gap:12px;text-align:left;background:transparent;padding:4px 0;width:100%;min-width:0}.track .num{width:18px;color:var(--muted);font-size:13px;text-align:center}.track img{width:50px;height:50px;object-fit:cover;border-radius:8px}.track .info{min-width:0;flex:1}.track b{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.track small{display:block;color:var(--muted);font-size:11px;margin-top:5px}.artist-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 10px}.artist{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:650}.artist img{width:42px;height:42px;border-radius:50%;object-fit:cover}.filters{display:flex;gap:20px;overflow:auto;white-space:nowrap;border-bottom:1px solid var(--border);padding:5px 0 13px;margin-bottom:15px}.filters button{background:none;color:var(--muted);font-size:12px;padding:0 0 4px}.filters button.active{color:#fff;border-bottom:2px solid #fff}.library-tools{display:flex;justify-content:space-between;align-items:center;margin:14px 0 23px}.sort{background:var(--card);border-radius:99px;padding:10px 14px;font-size:11px}.collection{display:flex;flex-direction:column;gap:4px}.collection button{display:flex;align-items:center;gap:14px;background:none;padding:12px 5px;text-align:left;font-size:14px}.collection button span:first-child{font-size:20px;width:25px}.collection button .arrow{margin-left:auto;color:var(--muted)}.menu-card{background:var(--card);border-radius:15px;padding:5px 14px;margin:15px 0}.menu-card button{display:flex;align-items:center;gap:13px;background:none;width:100%;text-align:left;padding:14px 0;font-size:13px;border-bottom:1px solid #292929}.menu-card button:last-child{border-bottom:0}.menu-card .arr{margin-left:auto;color:var(--muted)}.sub{display:block;color:var(--muted);font-size:10px;margin-top:4px}.mini{position:fixed;z-index:20;bottom:calc(82px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:min(calc(100% - 24px),568px);height:62px;background:#1C1C1C;border:1px solid #2A2A2A;border-radius:18px;display:flex;align-items:center;padding:8px 10px;gap:10px;box-shadow:0 8px 30px #0009}.mini-cover{width:44px;height:44px;border-radius:50%;object-fit:cover;background:#333}.mini-info{flex:1;min-width:0}.mini-info b{display:block;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mini-info small{font-size:10px;color:var(--muted)}.mini button{background:none;font-size:19px;padding:5px}.play-mini{background:white!important;color:#111!important;border-radius:50%;width:38px;height:38px;font-size:17px!important}.navbar{position:fixed;z-index:21;bottom:calc(10px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:min(calc(100% - 24px),568px);height:62px;background:#1C1C1C;border:1px solid #292929;border-radius:999px;display:grid;grid-template-columns:repeat(4,1fr);padding:6px}.nav-btn{background:transparent;border-radius:99px;color:#999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:18px}.nav-btn small{font-size:9px}.nav-btn.active{background:#2A2A2A;color:#fff}.page{display:none}.page.active{display:block}.fab{position:fixed;bottom:160px;right:max(22px,calc((100vw - 600px)/2 + 20px));width:52px;height:52px;border-radius:50%;background:#303030;font-size:26px;box-shadow:0 5px 20px #0008}.player{position:fixed;inset:0;z-index:50;background:#0F0F0F;display:none;overflow:auto;padding:calc(18px + env(safe-area-inset-top)) 22px 30px}.player.open{display:block}.player-inner{max-width:520px;margin:auto}.player-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:25px}.player-head span{font-size:10px;letter-spacing:1.5px;color:#aaa}.cover-large{width:min(78vw,330px);aspect-ratio:1;object-fit:cover;border-radius:16px;display:block;margin:0 auto 25px;background:#252525}.now-title{text-align:center;font-size:23px;font-weight:800;margin:0}.now-artist{text-align:center;color:var(--muted);margin:8px 0 10px;font-size:13px}.badge{display:block;text-align:center;color:#aaa;font-size:10px;letter-spacing:1px;margin-bottom:23px}.progress{width:100%;accent-color:white}.times{display:flex;justify-content:space-between;color:#888;font-size:10px;margin-top:4px}.controls{display:flex;align-items:center;justify-content:center;gap:36px;margin:24px 0}.controls button{background:none;font-size:26px}.controls .big-play{width:68px;height:68px;border-radius:50%;background:white;color:#111;font-size:25px}.volume{display:flex;gap:10px;align-items:center;color:#999;font-size:12px}.volume input{flex:1;accent-color:white}.action-row{display:flex;gap:8px;margin:18px 0}.action-row button{background:#222;border:1px solid #333;border-radius:99px;padding:12px;font-size:11px;flex:1}.upnext{margin-top:24px}.upnext h3{font-size:15px}.modal-wrap{display:none;position:fixed;inset:0;z-index:80;background:#000b;align-items:flex-end;justify-content:center;padding:12px}.modal-wrap.open{display:flex}.modal{width:min(100%,580px);background:#1C1C1C;border:1px solid #333;border-radius:22px;padding:22px;margin-bottom:env(safe-area-inset-bottom);max-height:85vh;overflow:auto}.modal h2{font-size:18px;margin:0 0 17px}.modal p{color:#aaa;font-size:12px;line-height:1.5}.modal input[type=text],.modal input[type=password]{width:100%;background:#101010;border:1px solid #333;border-radius:12px;padding:14px;color:#fff;margin:8px 0 13px}.modal-actions{display:flex;gap:9px;margin-top:12px}.modal-actions button,.primary{padding:12px 16px;border-radius:99px;background:#fff;color:#111;font-weight:700;font-size:12px}.modal-actions .secondary{background:#333;color:white}.slider-row{display:flex;align-items:center;gap:10px;margin:15px 0;font-size:12px}.slider-row label{width:55px}.slider-row input{flex:1;accent-color:white}.toast{position:fixed;z-index:100;bottom:160px;left:50%;transform:translateX(-50%);background:#eee;color:#111;padding:12px 17px;border-radius:99px;font-size:11px;font-weight:650;opacity:0;pointer-events:none;transition:opacity .2s;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis}.toast.show{opacity:1}.empty{color:#888;font-size:12px;padding:15px 0}.hidden{display:none!important} .youtube-frame{width:100%;aspect-ratio:16/9;max-width:520px;margin:0 auto 20px;border-radius:14px;overflow:hidden;background:#000;border:1px solid #292929}
+#ytplayer{width:100%;height:100%;min-height:200px}
+#ytplayer iframe{width:100%;height:100%;border:0}
+@media(min-width:600px){.app{padding-top:28px}.greeting{font-size:34px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <section id="home" class="page active">
+    <header class="top"><h1>Beranda</h1><button class="icon-btn" onclick="openModal('settings')">⚙</button></header>
+    <h2 class="greeting" id="greeting">Selamat malam</h2>
+    <div class="section"><div class="section-head"><h2>Panggilan Cepat</h2></div><div class="quick-grid" id="quickGrid"></div></div>
+    <div class="section"><div class="streak"><span class="flame">🔥</span><div><b>3 hari berturut-turut</b><div class="muted">Menyala</div></div></div></div>
+    <div class="section"><div class="chips" id="moodChips"></div></div>
+    <div class="section"><div class="section-head"><h2>Lanjutkan</h2><span class="muted">Untuk kamu</span></div><div class="three-grid" id="continueGrid"></div></div>
+  </section>
+
+  <section id="search" class="page">
+    <header class="top"><h1>Cari</h1><button class="icon-btn" onclick="showPage('home')">⌂</button></header>
+    <div class="searchbar"><span>⌕</span><input id="searchInput" placeholder="Cari lagu, album, artis..." autocomplete="off"><button class="icon-btn" onclick="clearSearch()">×</button></div>
+    <div class="pill-tabs"><button class="active" id="youtubeTab" onclick="setSearchMode('youtube')">YouTube</button><button id="deviceTab" onclick="setSearchMode('device')">Perangkat</button></div>
+    <div id="searchResults"></div>
+    <div id="searchDiscover">
+      <div class="section"><h2>Terakhir diputar</h2><div class="three-grid" id="recentGrid"></div></div>
+      <div class="section"><h2>Paling sering diputar</h2><div class="track-list" id="popularList"></div></div>
+      <div class="section"><h2>Artis favorit</h2><div class="artist-grid" id="artistGrid"></div></div>
+    </div>
+  </section>
+
+  <section id="library" class="page">
+    <header class="top"><h1>Pustaka</h1><button class="icon-btn" onclick="showToast('Pustaka BOTAX')">⋯</button></header>
+    <div class="filters" id="libraryFilters"></div>
+    <div class="library-tools"><button class="sort">Tanggal ditambahkan ↓</button><span>⌕　▦</span></div>
+    <h2 style="font-size:17px">Koleksi</h2><div class="collection">
+      <button onclick="showLiked()"><span>♡</span>Disukai <span class="arrow">›</span></button>
+      <button onclick="showToast('Unduhan belum tersedia di demo ini')"><span>⬇</span>Diunduh <span class="arrow">›</span></button>
+      <button onclick="showToast('Cache audio tersimpan sementara oleh browser')"><span>☁</span>Tersimpan di cache <span class="arrow">›</span></button>
+      <button onclick="showDeviceFiles()"><span>☰</span>Di perangkat <span class="arrow">›</span></button>
+      <button onclick="showToast('Belum cukup data untuk membuat Top 50')"><span>↗</span>Teratas saya 50 <span class="arrow">›</span></button>
+      <button onclick="showToast('Fitur unggah tidak tersedia')"><span>⬆</span>Diunggah <span class="arrow">›</span></button>
+    </div>
+    <div class="section" id="libraryContent"></div>
+  </section>
+
+  <section id="you" class="page">
+    <header class="top"><h1>Kamu</h1></header>
+    <div class="streak"><span class="flame">🔥</span><div><b>3 hari berturut-turut</b><div class="muted">Menyala</div></div></div>
+    <div class="menu-card">
+      <button onclick="showHistory()">🕒 Riwayat <span class="arr">›</span></button>
+      <button onclick="showStats()">📊 Statistik dan recap <span class="arr">›</span></button>
+    </div>
+    <div class="menu-card">
+      <button onclick="openModal('listen')">👥 Dengar bersama <span class="arr">›</span></button>
+      <button onclick="showToast('Arahkan mikrofon ke musik untuk mengenali lagu (demo)')">🎤 Kenali lagu <span class="arr">›</span></button>
+      <button onclick="openModal('eq')">🎚 Ekualiser <span class="arr">›</span></button>
+    </div>
+    <div class="menu-card">
+      <button onclick="openModal('login')">➡️ <span>Masuk ke YouTube Music<span class="sub" id="connectionText">Sinkronkan lagu disukai, pustaka, dan playlist</span></span><span class="arr">›</span></button>
+    </div>
+    <div class="menu-card">
+      <button onclick="openModal('settings')">⚙️ Pengaturan <span class="arr">›</span></button>
+      <button onclick="openModal('about')">ℹ️ Tentang <span class="arr">›</span></button>
+    </div>
+  </section>
+</div>
+
+<button class="fab hidden" id="fab" onclick="createPlaylist()">+</button>
+<div class="mini" id="miniPlayer">
+  <img class="mini-cover" id="miniCover" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=200">
+  <div class="mini-info" onclick="openFullPlayer()"><b id="miniTitle">Duka</b><small id="miniArtist">Last Child</small></div>
+  <button onclick="toggleLike(event)" id="miniLike">♡</button>
+  <button class="play-mini" onclick="togglePlayback(event)" id="miniPlay">▶</button>
+  <button onclick="nextSong(event)">⏭</button>
+</div>
+<nav class="navbar">
+  <button class="nav-btn active" data-page="home" onclick="showPage('home')">⌂<small>Beranda</small></button>
+  <button class="nav-btn" data-page="search" onclick="showPage('search')">⌕<small>Cari</small></button>
+  <button class="nav-btn" data-page="library" onclick="showPage('library')">▤<small>Pustaka</small></button>
+  <button class="nav-btn" data-page="you" onclick="showPage('you')">◉<small>Kamu</small></button>
+</nav>
+
+<div class="player" id="fullPlayer">
+  <div class="player-inner">
+    <div class="player-head"><button class="icon-btn" onclick="closeFullPlayer()">⌄</button><span>SEDANG MEMUTAR • BOTAX</span><button class="icon-btn" onclick="toggleLike(event)">♡</button></div>
+    <img class="cover-large" id="largeCover" src="">
+    <div class="youtube-frame"><div id="ytplayer"></div></div>
+    <h1 class="now-title" id="largeTitle">Duka</h1><div class="now-artist" id="largeArtist">Last Child</div><span class="badge" id="sourceBadge">FULL • YouTube</span>
+    <input class="progress" id="progress" type="range" min="0" max="100" value="0" step=".1">
+    <div class="times"><span id="currentTime">0:00</span><span id="totalTime">--:--</span></div>
+    <div class="controls"><button onclick="prevSong()">⏮</button><button class="big-play" id="bigPlay" onclick="togglePlayback()">▶</button><button onclick="nextSong()">⏭</button></div>
+    <div class="volume">VOL <input id="volume" type="range" min="0" max="1" step=".01" value=".85"> <span id="volumeLabel">85%</span></div>
+    <div class="action-row"><button onclick="unlockAudio()">PENCET KALAU BELUM BUNYI</button><button onclick="openModal('listen')">Dengar Bersama • BOTAX01</button></div>
+    <div class="upnext"><h3>Up Next</h3><div class="track-list" id="upNext"></div></div>
+  </div>
+</div>
+
+<div class="modal-wrap" id="modalWrap" onclick="if(event.target===this)closeModal()">
+ <div class="modal" id="modalContent"></div>
+</div>
+<div class="toast" id="toast"></div>
+<input type="file" id="devicePicker" accept="audio/*" multiple class="hidden">
+
+<script>
+/* GANTI API KEY DI SINI — atau isi dari menu Pengaturan. */
+const DEFAULT_YOUTUBE_API_KEY = "";
+const PIPED_INSTANCES = ["https://piped.video","https://pipedapi.kavin.rocks","https://pipedapi.adminforge.de"];
+const FALLBACK = [
+ {title:"Jakarta Hari Ini",artist:"for Revenge",cover:"https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=500"},
+ {title:"Serana",artist:"for Revenge",cover:"https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500"},
+ {title:"Sekeras Batu",artist:"Dhyo Haw",cover:"https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=500"},
+ {title:"Sampai Nanti",artist:"Threesixty",cover:"https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=500"},
+ {title:"Aku Kau dan Dia",artist:"Dhyo Haw",cover:"https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=500"},
+ {title:"Always Loving You Remix",artist:"Last Child",cover:"https://images.unsplash.com/photo-1506157786151-b8491531f063?w=500"},
+ {title:"Biarkan Berlari",artist:"The Cloves",cover:"https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=500"},
+ {title:"10 Tahun Di Barat",artist:"Over Distortion",cover:"https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500"},
+ {title:"Tarot",artist:".Feast",cover:"https://images.unsplash.com/photo-1501612780327-45045538702b?w=500"},
+ {title:"Cinta Itu Buta",artist:"Armada",cover:"https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=500"},
+ {title:"Amnesia",artist:"Al Ghazali",cover:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=500"},
+ {title:"Bertahta di Atas",artist:"LUKANEGARA",cover:"https://images.unsplash.com/photo-1506157786151-b8491531f063?w=500"}
+];
+const QUICK=FALLBACK.slice(0,6), CONTINUE=FALLBACK.slice(6);
+const POPULAR=[
+ ["Aku, Kamu Dan Samudra","Rebellion Rose"],["Bulan & Ksatria","Superman Is Dead"],["Sunset Di Tanah Anarki","Superman Is Dead"],["everything u are","Hindia"],["Wanita Masih Banyak","Stand Here Alone"],["Cincin","Hindia"]
+];
+const ARTISTS=["for Revenge","Hindia",".Feast","Last Child","Superman Is Dead","Rebellion Rose"];
+const moods=["Bersantai","Mengisi energi","Senang","Perjalanan","Romantis","Galau"];
+let queue=[...FALLBACK],currentIndex=0,searchTimer=null,searchMode="youtube",liked=JSON.parse(localStorage.getItem("botax-liked")||"[]"),history=JSON.parse(localStorage.getItem("botax-history")||"[]"),apiKey=localStorage.getItem("botax-api-key")||DEFAULT_YOUTUBE_API_KEY,connected=!!localStorage.getItem("botax-session"),playlistNames=JSON.parse(localStorage.getItem("botax-playlists")||"[]");
+let audio=new Audio();audio.preload="auto";audio.volume=.85;let ytPlayer=null,ytReady=false,usingYT=false,eqContext=null,eqFilters=[],audioSource=null;
+const $=id=>document.getElementById(id);
+function escapeHTML(s=""){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function showToast(s){const t=$("toast");t.textContent=s;t.classList.add("show");clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>t.classList.remove("show"),2600);}
+function img(song){return song.cover||"https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500";}
+function songKey(s){return (s.videoId||s.title+"-"+s.artist).toLowerCase();}
+function showPage(p){document.querySelectorAll(".page").forEach(x=>x.classList.toggle("active",x.id===p));document.querySelectorAll(".nav-btn").forEach(x=>x.classList.toggle("active",x.dataset.page===p));$("fab").classList.toggle("hidden",p!=="library");window.scrollTo(0,0);}
+function greeting(){let h=new Date().getHours();$("greeting").textContent=h<11?"Selamat pagi":h<15?"Selamat siang":h<19?"Selamat sore":"Selamat malam";}
+function renderTile(s){return `<button class="tile" onclick="playSongByKey('${encodeURIComponent(songKey(s))}')"><img src="${escapeHTML(img(s))}" loading="lazy"><b>${escapeHTML(s.title)}</b><small>${escapeHTML(s.artist||"YouTube")}${s.duration?" • "+escapeHTML(s.duration):""}</small></button>`;}
+function renderTrack(s,i=0){return `<button class="track" onclick="playSongByKey('${encodeURIComponent(songKey(s))}')"><span class="num">${i+1}</span><img src="${escapeHTML(img(s))}"><span class="info"><b>${escapeHTML(s.title)}</b><small>${escapeHTML(s.artist||"YouTube")}</small></span><span style="color:#888">•••</span></button>`;}
+function renderHome(){
+ $("quickGrid").innerHTML=QUICK.map(s=>`<button class="quick" onclick="playSongByKey('${encodeURIComponent(songKey(s))}')"><img src="${img(s)}"><span>${escapeHTML(s.title)}<br><small style="color:#888;font-weight:400">${escapeHTML(s.artist)}</small></span></button>`).join("");
+ $("continueGrid").innerHTML=CONTINUE.map(renderTile).join("");
+ $("moodChips").innerHTML=moods.map((m,i)=>`<button class="chip ${i===0?"active":""}" onclick="moodSearch('${m}',this)">${m}</button>`).join("");
+}
+function renderDiscover(){
+ $("recentGrid").innerHTML=QUICK.slice(0,3).map(renderTile).join("");
+ $("popularList").innerHTML=POPULAR.map((x,i)=>renderTrack({title:x[0],artist:x[1],cover:FALLBACK[i%6].cover},i)).join("");
+ $("artistGrid").innerHTML=ARTISTS.map((a,i)=>`<div class="artist"><img src="${FALLBACK[i].cover}"><span>${escapeHTML(a)}</span></div>`).join("");
+}
+function renderLibraryFilters(){let a=["Semua","Playlist","Lagu","Album","Artis","Podcast"];$("libraryFilters").innerHTML=a.map((x,i)=>`<button class="${i===0?"active":""}" onclick="libraryFilter(this,'${x}')">${x}</button>`).join("");}
+function libraryFilter(el,name){document.querySelectorAll(".filters button").forEach(x=>x.classList.remove("active"));el.classList.add("active");$("libraryContent").innerHTML=name==="Playlist"?playlistNames.map(x=>`<div class="track">▤　${escapeHTML(x)}</div>`).join(""):name==="Lagu"?liked.map(k=>{let s=findSong(k);return s?renderTrack(s):""}).join(""):"";}
+function findSong(k){return [...FALLBACK,...queue,...history].find(s=>songKey(s)===k);}
+function playSongByKey(k){let s=findSong(decodeURIComponent(k));if(!s)return;let i=queue.findIndex(x=>songKey(x)===songKey(s));if(i<0){queue=[s,...queue];i=0;}playSong(i);}
+async function playSong(index){
+ if(!queue.length)return;
+ currentIndex=(index+queue.length)%queue.length;
+ let s=queue[currentIndex];
+ setNowPlaying(s);
+ $("miniPlay").textContent="◌";$("bigPlay").textContent="◌";
+ history=[s,...history.filter(x=>songKey(x)!==songKey(s))].slice(0,60);
+ localStorage.setItem("botax-history",JSON.stringify(history));
+ audio.pause();usingYT=false;
+ try{
+   let videoId=s.videoId;
+   if(!videoId){
+     videoId=await resolveYouTubeVideo(s);
+     if(videoId){s.videoId=videoId;queue[currentIndex]=s;}
+   }
+   if(!videoId)throw new Error("Video YouTube tidak ditemukan");
+   playYouTubeVideo(videoId);
+   showToast("Memutar lagu YouTube: "+s.title+" ▶");
+ }catch(e){
+   setPlaying(false);
+   showToast("Lagu YouTube tidak ditemukan. Coba cari judul + artis.");
+ }
+}
+async function resolveYouTubeVideo(song){
+ const query=(song.title+" "+(song.artist||"")).trim();
+ // Official YouTube Data API v3 search when the user supplies an API key.
+ if(apiKey){
+   try{
+     const u="https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=5&q="+encodeURIComponent(query)+"&key="+encodeURIComponent(apiKey);
+     const r=await fetch(u);
+     if(r.ok){
+       const d=await r.json();
+       const item=(d.items||[]).find(x=>x.id&&x.id.videoId);
+       if(item){
+         song.title=item.snippet.title||song.title;
+         song.artist=item.snippet.channelTitle||song.artist;
+         song.cover=item.snippet.thumbnails?.high?.url||item.snippet.thumbnails?.medium?.url||song.cover;
+         return item.id.videoId;
+       }
+     }
+   }catch(e){}
+ }
+ // Public Piped search fallback. This is an unofficial community service and may be unavailable/CORS-blocked.
+ for(const base of PIPED_INSTANCES){
+   try{
+     const r=await fetch(base+"/api/search?q="+encodeURIComponent(query)+"&filter=music_videos");
+     if(!r.ok)continue;
+     const data=await r.json();
+     const items=Array.isArray(data)?data:[];
+     const item=items.find(x=>x.url&&x.url.includes("watch?v="))||items.find(x=>x.id);
+     if(item){
+       const id=item.id||(item.url.match(/[?&]v=([^&]+)/)||[])[1];
+       if(!id)continue;
+       song.title=item.title||song.title;
+       song.artist=item.uploaderName||item.uploader||song.artist;
+       song.cover=item.thumbnail||song.cover;
+       return id;
+     }
+   }catch(e){}
+ }
+ throw new Error("Search unavailable");
+}
+function setNowPlaying(s){
+ $("miniTitle").textContent=s.title;$("miniArtist").textContent=s.artist||"YouTube";$("miniCover").src=img(s);
+ $("largeTitle").textContent=s.title;$("largeArtist").textContent=s.artist||"YouTube";$("largeCover").src=img(s);
+ $("sourceBadge").textContent=s.videoId?"YOUTUBE • PEMUTAR RESMI":"MENCARI DI YOUTUBE";
+ updateLikeButton();renderUpNext();
+}
+function setPlaying(on){$("miniPlay").textContent=on?"Ⅱ":"▶";$("bigPlay").textContent=on?"Ⅱ":"▶";}
+function togglePlayback(e){if(e)e.stopPropagation();if(ytPlayer&&usingYT){let st=ytPlayer.getPlayerState();st===1?ytPlayer.pauseVideo():ytPlayer.playVideo();return;}if(audio.paused){audio.play().then(()=>setPlaying(true)).catch(()=>showToast("Pilih lagu YouTube untuk mulai memutar"));}else{audio.pause();setPlaying(false);}}
+function nextSong(e){if(e)e.stopPropagation();playSong(currentIndex+1);}
+function prevSong(){if(audio.currentTime>3){audio.currentTime=0;return;}playSong(currentIndex-1);}
+function openFullPlayer(){$("fullPlayer").classList.add("open");}
+function closeFullPlayer(){$("fullPlayer").classList.remove("open");}
+function toggleLike(e){if(e)e.stopPropagation();let s=queue[currentIndex];if(!s)return;let k=songKey(s);liked=liked.includes(k)?liked.filter(x=>x!==k):[...liked,k];localStorage.setItem("botax-liked",JSON.stringify(liked));updateLikeButton();showToast(liked.includes(k)?"Ditambahkan ke Disukai":"Dihapus dari Disukai");}
+function updateLikeButton(){let s=queue[currentIndex];let yes=s&&liked.includes(songKey(s));$("miniLike").textContent=yes?"♥":"♡";document.querySelector(".player-head button:last-child").textContent=yes?"♥":"♡";}
+function renderUpNext(){$("upNext").innerHTML=[1,2,3].map(n=>queue[(currentIndex+n)%queue.length]).filter(Boolean).map((s,i)=>renderTrack(s,i)).join("");}
+async function getPipedStream(){return null; /* BOTAX now uses the official YouTube embedded player. */}
+function loadYTAPI(){
+ if(window.YT&&window.YT.Player){createYTPlayer();return;}
+ if(document.getElementById("yt-api-script"))return;
+ let tag=document.createElement("script");tag.id="yt-api-script";tag.src="https://www.youtube.com/iframe_api";document.head.appendChild(tag);
+}
+window.onYouTubeIframeAPIReady=()=>{ytReady=true;createYTPlayer();};
+function createYTPlayer(){
+ if(ytPlayer||!window.YT||!window.YT.Player)return;
+ ytPlayer=new YT.Player("ytplayer",{height:"100%",width:"100%",videoId:"",playerVars:{autoplay:0,controls:1,playsinline:1,rel:0,modestbranding:1,origin:"https://appassets.androidplatform.net"},events:{
+  onReady:()=>{},
+  onStateChange:e=>{
+   if(e.data===1){usingYT=true;setPlaying(true);$("sourceBadge").textContent="YOUTUBE • PEMUTAR RESMI";}
+   if(e.data===2)setPlaying(false);
+   if(e.data===0){setPlaying(false);playSong(currentIndex+1);}
+  }
+ }});
+}
+function playYouTubeVideo(id){
+ openFullPlayer();
+ loadYTAPI();
+ let attempts=0;
+ const wait=()=>{
+  if(ytPlayer){usingYT=true;ytPlayer.loadVideoById(id);setPlaying(true);return;}
+  if(attempts++<40)setTimeout(wait,250);
+  else{setPlaying(false);showToast("YouTube Player belum siap. Coba buka lagi.");}
+ };
+ wait();
+}
+function unlockAudio(){if(usingYT&&ytPlayer){ytPlayer.playVideo();return;}audio.play().then(()=>setPlaying(true)).catch(()=>showToast("Browser menolak autoplay. Tekan play."));}
+audio.addEventListener("play",()=>setPlaying(true));audio.addEventListener("pause",()=>{if(!usingYT)setPlaying(false);});audio.addEventListener("ended",()=>playSong(currentIndex+1));
+audio.addEventListener("timeupdate",()=>{if(!usingYT){let d=audio.duration||0;$("progress").value=d?audio.currentTime/d*100:0;$("currentTime").textContent=fmt(audio.currentTime);$("totalTime").textContent=fmt(d);}});
+audio.addEventListener("loadedmetadata",()=>{$("totalTime").textContent=fmt(audio.duration);});
+setInterval(()=>{if(usingYT&&ytPlayer&&ytPlayer.getCurrentTime){try{const t=ytPlayer.getCurrentTime()||0,d=ytPlayer.getDuration()||0;$("currentTime").textContent=fmt(t);$("totalTime").textContent=fmt(d);$("progress").value=d?t/d*100:0;}catch(e){}}},700);
+function fmt(n){if(!isFinite(n))return "--:--";return Math.floor(n/60)+":"+String(Math.floor(n%60)).padStart(2,"0");}
+$("progress").addEventListener("input",e=>{if(!usingYT&&audio.duration)audio.currentTime=audio.duration*e.target.value/100;});
+$("volume").addEventListener("input",e=>{audio.volume=Number(e.target.value);$("volumeLabel").textContent=Math.round(audio.volume*100)+"%";});
+function openModal(which){
+ let c="";
+ if(which==="settings")c=`<h2>Pengaturan</h2><label class="muted">YouTube Data API Key (opsional)</label><input id="apiKeyInput" type="password" placeholder="Tempel API key di sini" value="${escapeHTML(apiKey)}"><p>API key disimpan di perangkat ini. Jangan gunakan key rahasia pada perangkat publik.</p><label class="muted">Kualitas audio</label><select id="quality" style="width:100%;background:#101010;color:white;padding:12px;border:1px solid #333;border-radius:10px"><option>Rendah</option><option selected>Normal</option><option>Tinggi</option></select><p><label><input type="checkbox" id="cacheToggle" checked> Aktifkan cache browser (tidak mengunduh lagu)</label></p><div class="modal-actions"><button class="secondary" onclick="closeModal()">Batal</button><button onclick="saveSettings()">Simpan</button></div>`;
+ if(which==="login")c=`<h2>Masuk ke YouTube Music</h2><p>BOTAX memakai YouTube Player resmi dan mode tamu. Jangan tempel cookie sesi YouTube di situs demo ini karena cookie dapat memberi akses ke akunmu. Masukkan API key YouTube Data API v3 di Pengaturan untuk pencarian yang lebih konsisten.</p><div class="modal-actions"><button class="secondary" onclick="closeModal()">Tutup</button><button onclick="closeModal();openModal('settings')">Buka Pengaturan</button></div>`;
+ if(which==="listen")c=`<h2>Dengar bersama</h2><p>Kode sesi kamu</p><div style="font-size:30px;font-weight:800;letter-spacing:4px;text-align:center;padding:15px">BOTAX01</div><p>Demo sinkronisasi lokal: buka BOTAX di tab/browser yang sama dan gunakan kode sesi ini. Sinkronisasi lintas perangkat membutuhkan server realtime.</p><div class="modal-actions"><button onclick="copyText(location.href+'?session=BOTAX01')">Salin Link</button><button class="secondary" onclick="copyText('BOTAX01')">Salin Kode</button></div>`;
+ if(which==="eq")c=`<h2>Ekualiser</h2><div class="slider-row"><label>Bass</label><input id="bass" type="range" min="-12" max="12" value="0" oninput="applyEQ()"><span id="bassVal">0 dB</span></div><div class="slider-row"><label>Mid</label><input id="mid" type="range" min="-12" max="12" value="0" oninput="applyEQ()"><span id="midVal">0 dB</span></div><div class="slider-row"><label>Treble</label><input id="treble" type="range" min="-12" max="12" value="0" oninput="applyEQ()"><span id="trebleVal">0 dB</span></div><div class="modal-actions"><button class="secondary" onclick="setPreset('normal')">Normal</button><button class="secondary" onclick="setPreset('bass')">Bass Boost</button><button class="secondary" onclick="setPreset('rock')">Rock</button><button class="secondary" onclick="setPreset('pop')">Pop</button><button class="secondary" onclick="setPreset('dangdut')">Dangdut</button></div><p>Filter Web Audio diterapkan pada audio demo HTML5. Pemutaran YouTube menggunakan player resmi dan tidak dapat diproses melalui filter ini.</p>`;
+ if(which==="about")c=`<h2>Tentang BOTAX</h2><p>BOTAX adalah demo pemutar musik satu file HTML. Pemutaran video YouTube dilakukan melalui YouTube IFrame Player API resmi. Tidak berafiliasi dengan YouTube atau Auralys.</p><div class="modal-actions"><button onclick="closeModal()">Tutup</button></div>`;
+ $("modalContent").innerHTML=c;$("modalWrap").classList.add("open");
+}
+function closeModal(){$("modalWrap").classList.remove("open");}
+function saveSettings(){apiKey=$("apiKeyInput").value.trim();localStorage.setItem("botax-api-key",apiKey);localStorage.setItem("botax-quality",$("quality").value);localStorage.setItem("botax-cache",$("cacheToggle").checked?"1":"0");closeModal();showToast("Pengaturan disimpan");}
+function copyText(t){if(navigator.clipboard)navigator.clipboard.writeText(t).then(()=>showToast("Tersalin"));else showToast("Salin manual: "+t);}
+function createPlaylist(){let n=prompt("Nama playlist baru:");if(!n)return;playlistNames.push(n);localStorage.setItem("botax-playlists",JSON.stringify(playlistNames));showToast("Playlist dibuat");}
+function showLiked(){showPage("library");$("libraryContent").innerHTML="<h3>Disukai</h3>"+(liked.map(k=>findSong(k)).filter(Boolean).map((s,i)=>renderTrack(s,i)).join("")||'<div class="empty">Belum ada lagu disukai.</div>');}
+function showHistory(){showPage("you");$("modalContent").innerHTML="<h2>Riwayat</h2>"+(history.map((s,i)=>renderTrack(s,i)).join("")||'<p class="empty">Belum ada riwayat.</p>')+'<div class="modal-actions"><button onclick="closeModal()">Tutup</button></div>';$("modalWrap").classList.add("open");}
+function showStats(){showToast("Total diputar: "+history.length+" lagu");}
+function showDeviceFiles(){$("devicePicker").click();}
+$("devicePicker").addEventListener("change",e=>{let files=[...e.target.files];files.forEach(f=>{let s={title:f.name.replace(/\.[^.]+$/,""),artist:"Perangkat",cover:FALLBACK[0].cover,audio:URL.createObjectURL(f)};queue.unshift(s);});showToast(files.length+" file ditambahkan");});
+function clearSearch(){$("searchInput").value="";$("searchResults").innerHTML="";$("searchDiscover").classList.remove("hidden");}
+function setSearchMode(m){searchMode=m;$("youtubeTab").classList.toggle("active",m==="youtube");$("deviceTab").classList.toggle("active",m==="device");$("searchInput").placeholder=m==="device"?"Cari file di perangkat...":"Cari lagu, album, artis...";}
+$("searchInput").addEventListener("input",()=>{clearTimeout(searchTimer);let q=$("searchInput").value.trim();if(!q){$("searchResults").innerHTML="";$("searchDiscover").classList.remove("hidden");return;}$("searchDiscover").classList.add("hidden");searchTimer=setTimeout(()=>searchMusic(q),400);});
+async function searchMusic(q){
+ $("searchResults").innerHTML='<div class="empty">Mencari lagu…</div>';
+ if(searchMode==="device"){$("searchResults").innerHTML='<div class="empty">Gunakan Pustaka → Di perangkat untuk memilih file audio.</div>';return;}
+ try{
+  let results=[];
+  if(apiKey){let u=`https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=15&q=${encodeURIComponent(q)}&key=${encodeURIComponent(apiKey)}`;let r=await fetch(u);if(r.ok){let d=await r.json();results=(d.items||[]).map(x=>({videoId:x.id.videoId,title:x.snippet.title,artist:x.snippet.channelTitle,cover:x.snippet.thumbnails?.high?.url||x.snippet.thumbnails?.default?.url}));}}
+  if(!results.length){
+   try{let r=await fetch("https://piped.video/api/search?q="+encodeURIComponent(q)+"&filter=music_videos");if(r.ok){let d=await r.json();results=(d||[]).slice(0,15).map(x=>({videoId:(x.url||"").split("v=")[1],title:x.title,artist:x.uploaderName,cover:x.thumbnail})).filter(x=>x.videoId);}}catch(e){}
+  }
+  if(!results.length){$("searchResults").innerHTML='<div class="empty">Pencarian online tidak tersedia dari browser ini. Coba masukkan API key resmi di Pengaturan atau periksa koneksi.</div>';return;}
+  queue=results.concat(FALLBACK);$("searchResults").innerHTML='<div class="section"><h2>Hasil pencarian</h2><div class="track-list">'+results.map((s,i)=>renderTrack(s,i)).join("")+'</div></div>';
+ }catch(e){$("searchResults").innerHTML='<div class="empty">Gagal mencari. Periksa koneksi atau API key.</div>';}
+}
+async function moodSearch(m,el){document.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));el.classList.add("active");showPage("search");$("searchInput").value=m+" playlist";searchMusic(m+" playlist");}
+function applyEQ(){let vals=["bass","mid","treble"];vals.forEach(id=>$(id+"Val").textContent=$(id).value+" dB");try{ensureEQ();eqFilters[0].gain.value=+$("bass").value;eqFilters[1].gain.value=+$("mid").value;eqFilters[2].gain.value=+$("treble").value;}catch(e){}}
+function ensureEQ(){if(eqContext)return;if(!window.AudioContext&&!window.webkitAudioContext)return;eqContext=new (window.AudioContext||window.webkitAudioContext)();audioSource=eqContext.createMediaElementSource(audio);let freqs=[1000,1000,1000];eqFilters=[eqContext.createBiquadFilter(),eqContext.createBiquadFilter(),eqContext.createBiquadFilter()];eqFilters[0].type="lowshelf";eqFilters[0].frequency.value=250;eqFilters[1].type="peaking";eqFilters[1].frequency.value=1000;eqFilters[1].Q.value=1;eqFilters[2].type="highshelf";eqFilters[2].frequency.value=4000;audioSource.connect(eqFilters[0]);eqFilters[0].connect(eqFilters[1]);eqFilters[1].connect(eqFilters[2]);eqFilters[2].connect(eqContext.destination);}
+function setPreset(p){let v={normal:[0,0,0],bass:[8,1,2],rock:[5,2,5],pop:[3,4,3],dangdut:[7,2,5]}[p];["bass","mid","treble"].forEach((id,i)=>$(id).value=v[i]);applyEQ();}
+function playSharedSync(){try{let s=JSON.parse(localStorage.getItem("botax-shared-song")||"null");if(s&&s.t>Date.now()-15000){let i=queue.findIndex(x=>x.videoId===s.videoId||x.title===s.title);if(i>=0&&i!==currentIndex)playSong(i);}}catch(e){}}
+window.addEventListener("storage",e=>{if(e.key==="botax-shared-song")playSharedSync();});
+function shareCurrent(){let s=queue[currentIndex];localStorage.setItem("botax-shared-song",JSON.stringify({...s,t:Date.now()}));}
+setInterval(()=>{if(!audio.paused&&!usingYT)shareCurrent();},3000);
+greeting();renderHome();renderDiscover();renderLibraryFilters();
+setNowPlaying(FALLBACK[0]);
+</script>
+</body>
+</html>
